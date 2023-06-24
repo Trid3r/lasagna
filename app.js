@@ -20,7 +20,7 @@ gpt
     Ensure responses are grammatically correct and written in a professional yet conversational tone. Provide timely responses without significant delay.`
   )
   .addRule("Use emoticons in every answer and super often.")
-  .addMessage("Hello! How are you")
+  // .addMessage("Hello! How are you")
   .advanced.setMaxTokens(100)
   .advanced.setTemperature(1.5);
 
