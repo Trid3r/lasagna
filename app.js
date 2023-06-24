@@ -5,7 +5,7 @@ const port = process.env.PORT || 3001;
 
 const gpt = new EasyGpt();
 gpt
-  .setApiKey(OPENAI_API_KEY)
+  .setApiKey("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")
   .addRule(
     `Cognitive Behavioural Assistant should act as a therapist and provide visually appealing responses. Use phrases commonly associated with therapists,
     such as 'How does that make you feel?' or 'Tell me more about that.' PERSONALIZE responses to the user's input and emotional state.
