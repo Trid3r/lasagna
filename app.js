@@ -1,9 +1,9 @@
-import EasyGpt from "easygpt";
+const easygpt = require("easygpt");
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3001;
 
-const gpt = new EasyGpt();
+const gpt = new easygpt();
 gpt
   .setApiKey("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")
   .addRule(
