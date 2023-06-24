@@ -28,29 +28,29 @@ gpt
 //Endpoint
 app.post("/askgpt", async (req, res) => {
   const messages = req.body.messages;
-  console.log(messages)
-  // try {
-  //   const responses = await Promise.all(
-  //     messages.map(async message => {
-  //       gpt.addMessage(message.content);
-  //       return await gpt.ask();
-  //     })
-  //   );
+  
+  try {
+    const responses = await Promise.all(
+      messages.map(async message => {
+        gpt.addMessage(message.content);
+        return await gpt.ask();
+      })
+    );
 
-  //   const answers = responses
-  //     .filter((response, index) => messages[index].role !== "system")
-  //     .map(response => response.content);
+    const answers = responses
+      .filter((response, index) => messages[index].role !== "system")
+      .map(response => response.content);
 
-  //   console.log(answers);
+    console.log(answers);
 
-  //   res.json({ answers });
-  // } catch (error) {
-  //   console.error(error);
+    res.json({ answers });
+  } catch (error) {
+    console.error(error);
 
-  //   res.status(500).json({
-  //     error: "Failed to ask ChatGPT API. Error: " + error,
-  //   });
-  // }
+    res.status(500).json({
+      error: "Failed to ask ChatGPT API. Error: " + error,
+    });
+  }
   
 });
 
