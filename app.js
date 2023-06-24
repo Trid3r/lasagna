@@ -1,7 +1,14 @@
-const easygpt = require("easygpt");
-const express = require("express");
+import express from "express";
+import dotenv from "dotenv";
+import EasyGpt from "easygpt";
+
+dotenv.config();
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+
 const app = express();
-const port = process.env.PORT || 3001;
+app.use(express.json());
+
+const gpt = new EasyGpt();
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
