@@ -5,7 +5,7 @@ import EasyGpt from "easygpt";
 
 // Constants
 dotenv.config();
-// const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 const port = process.env.PORT || 3001;
 const app = express();
 app.use(express.json());
